@@ -2,13 +2,176 @@
 
 <html>
   <head>
-    <title>INSERT TITLE HERE!</title>
+    <title>A/B Testing</title>
     <link rel="stylesheet" href="index.css">
-    <!-- TODO: add additional links here! e.g. fonts, icons, more stylesheets, etc. -->
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
 
   <body>
-    <!-- TODO: put your HTML code here! -->
+    <h1>A/B Testing</h1> <br>
+    <p>I'll be exploring the two slightly different versions of an online cactus shop and determine whether it has an
+      effect on various metrics.
+    </p>
+    <div class="grid-container">
+      <div class="grid-item">
+        <h2>Version A</h2>
+        <img src="a.png"/>
+        <p>Version A uses <a style="color:red">red</a> "Add to Cart" buttons to emphasize the most important button that will lead customers
+          to add cacti to their shopping carts. The shopping cart is placed on the <b>top right of the screen</b>,
+          where users are most accostomed to on an average e-commerce website.
+        </p>
+      </div>
+      <div class="grid-item">
+        <h2>Version B</h2>
+        <img src="b.png"/>
+        <p>Version B uses <a style="color:blue">blue</a> "Add to Cart" buttons that is relatively neutral in terms of effect. The shopping cart
+          is placed under the items as the <b>footer of the page</b>. 
+        </p>
+      </div>  
+    </div>
+    <a href="https://still-taiga-82610.herokuapp.com" ><p style="text-align:center; font-size:20px;color:purple;">Check out the website here!</p></a>
+    <h2>Experiment based on Two Metrics</h2>
+    <p>
+      40 test users will be tasked to add $150 worth of cacti to their shopping carts. Their interactions will be analyzed using 2 metrics: 
+    </p>
+    <ol>
+      <li><b>Time to Completion:</b> how fast they are able to allocate items to the shopping cart up to $150 or more.</li>
+      <li><b>Return Rate:</b> whether or not they revisited the website after checking the cart.</li>
+    </ol>
+    <h3>Hypotheses for Time to Completion</h3>
+      <ul>
+        <li><b>Null Hypothesis:</b> There is no significant difference between interface A and B in terms of time to completion.</li>
+        <li><b>Alternative Hypothesis:</b> Interface A will take less time to complete over interface B. </li>
+      </ul>
+      <p><a style="color:tomato;font-style: italic;">Why?</a> My intention behind using red buttons for adding items to the cart is to make the buttons more noticable and
+        easier access. Thus, I'd predict that users would spend less time completing the task on interface A. 
+      </p>
+    <h3>Hypotheses for Return Rate</h3>
+      <ul>
+        <li><b>Null Hypothesis:</b> There is no significant difference between interface A and B in terms of return rate.</li>
+        <li><b>Alternative Hypothesis:</b> Interface A leads to higher return rate over interface B. </li>
+      </ul>
+      <p><a style="color:tomato;font-style: italic;">Why?</a> My intention behind putting the cart on the top right hand corner is to replicate the common location of carts on an online shopping platform. 
+        Thus, I'd predict that users would interact with the cart and the online catalog in interface A more so than interface B. 
+      </p>
+      <h2>Results</h2>
+      <p>1. Time to Completion (in milliseconds)</p>
+        <table style="text-align:center;width:70%">
+          <tr>
+            <th>Interface A</th>
+            <th>Interface B</th> 
+          </tr>
+          <tr>
+            <td>26067</td>
+            <td>14565</td>
+          </tr>
+          <tr>
+            <td>13997</td>
+            <td>34155</td>
+          </tr>
+          <tr>
+            <td>28020</td>
+            <td>18525</td>
+          </tr>
+          <tr>
+            <td>10699</td>
+            <td>3421</td>
+          </tr>
+          <tr>
+            <td>5976</td>
+            <td>16898</td>
+          </tr>
+          <tr>
+            <td>10336</td>
+            <td>15242</td>
+          </tr>
+          <tr>
+            <td>5820</td>
+            <td>16615</td>
+          </tr>
+          <tr>
+            <td>19616</td>
+            <td>7086</td>
+          </tr>
+          <tr>
+            <td>12549</td>
+            <td>8466</td>
+          </tr>
+          <tr>
+            <td>10075</td>
+            <td>8292</td>
+          </tr>
+          <tr>
+            <td>7210</td>
+            <td>5826</td>
+          </tr>
+          <tr>
+            <td>9765</td>
+            <td>6853</td>
+          </tr>
+          <tr>
+            <td>4973</td>
+            <td>153473</td>
+          </tr>
+          <tr>
+            <td>8581</td>
+            <td>13809</td>
+          </tr>
+          <tr>
+            <td>10056</td>
+            <td>7165</td>
+          </tr>
+          <tr>
+            <td>10870</td>
+            <td>5209</td>
+          </tr>
+          <tr>
+            <td>8448</td>
+            <td>4680</td>
+          </tr>
+          <tr>
+            <td>3930</td>
+            <td>7353</td>
+          </tr>
+          <tr>
+            <td>5555</td>
+            <td>6770</td>
+          </tr>
+          <tr>
+            <td>6779</td>
+            <td>7399</td>
+          </tr>
+        </table>
+      
+      <p>2. Return Rate</p>
+        <table style="text-align:center;width:70%">
+          <tr>
+            <th>Interface</th>
+            <th>Return</th> 
+            <th>No Return</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>12</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>13</td>
+            <td>7</td>
+          </tr>
+        </table>
+      <h2>Statistical Analysis</h2>
+        <img src="info.png"/>
+
+      <h2>Lessons Learned</h2>
+        <ul>
+          <li>I think the biggest limitation was the sample size. Perhaps with more users, we could see significance in the data.</li>
+          <li>Another limitation would be that most and all the test users already have the prior experience interacting with the website themselves. This can lead to biased results.</li>
+          <li>Perhaps the changes I made for each version was not drastic enough to have an effect on how users navigate and understand the page.</li>
+          <li>Regardless of the results to my specific experiment, there still is a correlation between color usage/page structure and user engagement and navigation.</li>
+        </ul>
+      <br><br><br><br>
   </body>
 </html>
